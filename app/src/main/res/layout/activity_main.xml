@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
 	tools:context="bk.appathon18.MainActivity">
 	
 	<com.google.android.gms.maps.MapView
@@ -15,13 +15,13 @@
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:paddingBottom="8dp"
-		android:fontFamily="@font/fira_sans_medium_round_font"
-		android:paddingEnd="16dp"
-		android:paddingStart="16dp"
 		android:layout_alignParentEnd="true"
 		android:layout_margin="16dp"
 		android:background="@drawable/tv_bg"
+		android:fontFamily="@font/fira_sans_medium_round_font"
+		android:paddingBottom="8dp"
+		android:paddingEnd="16dp"
+		android:paddingStart="16dp"
 		android:paddingTop="8dp"
 		android:text="SAFE"/>
 	
@@ -34,24 +34,42 @@
 		<com.github.clans.fab.FloatingActionButton
 			android:id="@+id/fab1"
 			android:layout_width="wrap_content"
-			android:src="@drawable/ic_food_icon"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_food_icon"/>
 		
 		<com.github.clans.fab.FloatingActionButton
 			android:id="@+id/fab2"
 			android:layout_width="wrap_content"
-			android:src="@drawable/water_icon"
 			android:layout_height="wrap_content"
 			android:layout_below="@id/fab1"
-			android:layout_marginTop="10dp"/>
+			android:layout_marginTop="10dp"
+			android:src="@drawable/water_icon"/>
 		
 		<com.github.clans.fab.FloatingActionButton
 			android:id="@+id/fab3"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_below="@id/fab2"
+			android:layout_marginTop="10dp"
 			android:src="@drawable/ic_safe_house"
-			app:fab_size="normal"
-			android:layout_marginTop="10dp"/>
+			app:fab_size="normal"/>
 	</RelativeLayout>
+	
+	<Button
+		android:id="@+id/navigateButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_centerHorizontal="true"
+		android:background="@drawable/navigate_bg"
+		android:drawablePadding="5dp"
+		android:drawableStart="@drawable/ic_navigate"
+		android:fontFamily="@font/fira_sans_medium_round_font"
+		android:paddingBottom="7dp"
+		android:paddingEnd="15dp"
+		android:paddingStart="15dp"
+		android:onClick="navigateClick"
+		android:paddingTop="7dp"
+		android:text="NAVIGATE"
+		android:alpha="0"/>
 </RelativeLayout>

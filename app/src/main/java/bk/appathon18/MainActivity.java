@@ -4,22 +4,25 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.WindowManager;
-import android.widget.Toast;
+import android.widget.Button;
 import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.LatLng;
 
-public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMapClickListener {
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnMapClickListener, GoogleMap.OnCameraMoveStartedListener {
 
 
     GoogleMap googleMap;
     MapView mapView;
+    Button navigateButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        navigateButton = findViewById(R.id.navigateButton);
         mapView = findViewById(R.id.google_map_view);
         mapView.onCreate(null);
         mapView.onResume();
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         MapsInitializer.initialize(this);
         this.googleMap = googleMap;
         googleMap.setOnMapClickListener(this);
+        googleMap.setOnCameraMoveStartedListener(this);
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
                 android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -44,8 +48,19 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     public void onMapClick(LatLng latLng) {
-        Toast.makeText(this, latLng.latitude + " " + latLng.longitude, Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show();
+        navigateButton.animate().alpha(1f).translationY(-100).setDuration(300);
     }
 
+    public void navigateClick(View view) {
+        float alpha = view.getAlpha();
+        if (alpha != 0f) {
+
+        }
+    }
+
+
+    @Override
+    public void onCameraMoveStarted(int i) {
+        navigateButton.animate().alpha(0f).translationY(100).setDuration(300);
+    }
 }
