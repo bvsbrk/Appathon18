@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1087054126261",
+    "firebase_url": "https://appathon18.firebaseio.com",
+    "project_id": "appathon18",
+    "storage_bucket": "appathon18.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1087054126261:android:fc8cdf5be4f59004",
+        "android_client_info": {
+          "package_name": "bk.appathon18"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1087054126261-7r7fgv6rb0g3n0jdqhbrsbpgbq6vl4vp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "bk.appathon18",
+            "certificate_hash": "c9a344b4bc9651f05e7759c2bf71ab09a2cfb5ac"
+          }
+        },
+        {
+          "client_id": "1087054126261-cupqs05tdo81tqf1ncalvj94fif2u5dt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5Ps5XTBqUOy2MLAEyGvAud3iceXwr21A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1087054126261-cupqs05tdo81tqf1ncalvj94fif2u5dt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
